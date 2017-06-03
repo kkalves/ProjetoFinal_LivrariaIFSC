@@ -18,6 +18,8 @@ public class CadastroProduto extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/FormularioCadastroProduto.jsp");
 		view.forward(req, resp);
 	}
@@ -31,8 +33,9 @@ public class CadastroProduto extends HttpServlet {
 		String ano = req.getParameter("ano");
 		String isbn = req.getParameter("isbn");
 		String descricao = req.getParameter("descricao");
+		String valor = req.getParameter("valor");
 		
-		Produto p1 = new Produto(titulo, autor, editora, numero, ano, isbn, descricao);
+		Produto p1 = new Produto(titulo, autor, editora, numero, ano, isbn, descricao, valor);
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		produtoDAO.inserir(p1);
 		

@@ -8,9 +8,10 @@ public class Produto {
 	private String ano;
 	private String isbn;
 	private String descricao;
-	
+	private String valor;
+
 	public Produto(String titulo, String autor, String editora, String numero, String ano, String isbn,
-			String descricao) {
+			String descricao, String valor) {
 		super();
 		this.titulo = titulo;
 		this.autor = autor;
@@ -19,6 +20,15 @@ public class Produto {
 		this.ano = ano;
 		this.isbn = isbn;
 		this.descricao = descricao;
+		this.valor = valor;
+	}
+	
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
 	}
 	
 	public String getTitulo() {

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
@@ -137,8 +138,8 @@
               <div class="card-body">
                 <form method="post" action="">
                   <div class="form-group">
-                    <label class="control-label">TÃ­tulo</label>
-                    <input class="form-control" name="titulo" placeholder="TÃ­tulo da Obra">
+                    <label class="control-label">Título</label>
+                    <input class="form-control" name="titulo" placeholder="Título da Obra">
                   </div>
                   <div class="form-group">
                     <label class="control-label">Autor</label>
@@ -149,24 +150,24 @@
                     <input class="form-control" name="editora" placeholder="Editora">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Numero EdiÃ§Ã£o</label>
-                    <input class="form-control" name="numero-edicao" placeholder="NÃºmero ediÃ§Ã£o">
+                    <label class="control-label">Número Edição</label>
+                    <input class="form-control" name="numero-edicao" placeholder="Número Edição">
                   </div>
                   <div class="form-group">
                     <label class="control-label">Ano</label>
-                    <input class="form-control" name="ano" placeholder="Ano de publicaÃ§Ã£o da ediÃ§Ã£o">
+                    <input class="form-control" name="ano" placeholder="Ano de publicação da Edição">
                   </div>
                   <div class="form-group">
                     <label class="control-label">ISBN</label>
                     <input class="form-control" name="isbn" placeholder="ISBN">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">DescriÃ§Ã£o</label>
-                    <textarea class="form-control" name="descricao" placeholder="Breve descriÃ§Ã£o da obra"></textarea>
+                    <label class="control-label">Descrição</label>
+                    <textarea class="form-control" name="descricao" placeholder="Breve descrição da obra"></textarea>
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Imagem/Capa EdiÃ§Ã£o</label>
-                    <input class="form-control" name="file">
+                    <label class="control-label">Valor da Obra</label>
+                    <input class="form-control" name="valor" placeholder="Valor da Obra">
                   </div>
                   <div class="card-footer">
                   	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">
