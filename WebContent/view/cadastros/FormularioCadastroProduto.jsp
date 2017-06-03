@@ -132,9 +132,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card">
+              ${mensagem}
               <h3 class="card-title">Cadastro</h3>
               <div class="card-body">
-                <form>
+                <form method="post" action="">
                   <div class="form-group">
                     <label class="control-label">Título</label>
                     <input class="form-control" name="titulo" placeholder="Título da Obra">
@@ -167,11 +168,12 @@
                     <label class="control-label">Imagem/Capa Edição</label>
                     <input class="form-control" name="file">
                   </div>
+                  <div class="card-footer">
+                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">
+             	  </div>
                 </form>
               </div>
-              <div class="card-footer">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Cadastrar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
-              </div>
+
             </div>
   </body>
 </html>
