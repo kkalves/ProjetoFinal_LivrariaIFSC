@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import dao.ProdutoDAO;
 import model.Produto;
 
@@ -21,7 +23,7 @@ public class BuscaProduto extends HttpServlet{
 		if(produto == null){
 			req.setAttribute("mensagem", "<div class='alert alert-danger'>Produto não encontrado!</div>");
 		}
-		
-		
+		Gson gson = new Gson();
+		resp.getWriter().write(gson.toJson(produto));
 	}
 }

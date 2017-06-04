@@ -148,30 +148,38 @@
                <form>
                   <div class="form-group">
                     <label class="control-label">Produto:</label>
-                    <input class="form-control" name="produto">
+                    <input class="form-control" id="titulo-produto" name="produto">
                   </div>
                   <div class="form-group">
                    <button type="button" id="btn-buscar" name="btn_buscar" class="btn btn-primary">Buscar</button>
                   </div>
                   <div class="form-group">
                     <label class="control-label">Descrição Produto:</label>
-                    <textarea class="form-control" name= "descricaoProduto" rows="4"></textarea>
+                    <textarea class="form-control" id="descricaoProduto" name= "descricaoProduto" rows="4"></textarea>
                   </div>
                   <div class="form-group">
                     <label class="control-label">Valor Unitario:</label>
-                    <input class="form-control" name="valorUnitario">
+                    <input class="form-control" id="valorUnitario" name="valorUnitario">
                   </div>
                   <div class="form-group">
                     <label class="control-label">Quantidade:</label>
-                    <input class="form-control" name="quantidade">
+                    <input class="form-control" id="quantidade" name="quantidade">
                   </div>
                   <div class="form-group">
                     <label class="control-label">Valor Desconto:</label>
-                    <input class="form-control" name="valorDesconto">
+                    <div class="input-group"><span class="input-group-addon">%</span>
+                		<input class="form-control" id="valorDesconto" name="valorDesconto" type="text">
+                		<span class="input-group-btn">
+                		<button class="btn btn-primary" id="btn-desconto" type="button">Aplicar</button></span>
+             		</div>
                   </div>
+
                   <div class="form-group">
                     <label class="control-label">Valor Total:</label>
-                    <input class="form-control" name="valorTotal">
+                    <input class="form-control" id="valorTotal" name="valorTotal">
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-primary" id="btn-add" type="button">Adicionar ao carrinho<span class="fa fa-cart-plus"></span></button>
                   </div>
                 </form>
               </div>
@@ -182,7 +190,7 @@
             <div class="card">
               <h3 class="card-title">Resumo Venda</h3>
               <div class="card-body">
-              <table class="table table-condensed">
+              <table id="tabela-produtos" class="table table-condensed">
                 <thead>
                   <tr>
                     <th>Item</th>
