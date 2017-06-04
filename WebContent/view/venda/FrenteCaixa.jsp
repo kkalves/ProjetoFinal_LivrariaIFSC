@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,18 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <title>Greenwich Village </title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
+    <title>Greenwich Village</title>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
     <!--if lt IE 9
     script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
     script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     -->
     <!-- Javascripts-->
-    <script src="../../js/jquery-2.1.4.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/plugins/pace.min.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-2.1.4.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/plugins/pace.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/js/frenteCaixa.js"></script>
+    
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
@@ -67,7 +72,7 @@
             <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
             <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Venda</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="FrenteCaixa.html"><i class="fa fa-circle-o"></i> Frente Caixa</a></li>
+                <li><a href="FrenteCaixa.jsp"><i class="fa fa-circle-o"></i> Frente Caixa</a></li>
               </ul>
             </li>
             <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
@@ -123,60 +128,98 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-edit"></i>Cadastro Produto</h1>
-            <p>Produto</p>
+            <h1><i class="fa fa-edit"></i>Frente Caixa</h1>
+            <p>Caixa</p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-home fa-lg"></i></li>
-              <li>Formulario</li>
-              <li><a href="#">Cadastro Produto</a></li>
+              <li>Venda</li>
+              <li><a href="#">Frente Caixa</a></li>
             </ul>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <div class="card">
-              <h3 class="card-title">Cadastro</h3>
+               ${mensagem}
+              <h3 class="card-title">Dados Produto</h3>
               <div class="card-body">
-                <form>
+               <form>
                   <div class="form-group">
-                    <label class="control-label">Título</label>
-                    <input class="form-control" name="titulo" placeholder="Título da Obra">
+                    <label class="control-label">Produto:</label>
+                    <input class="form-control" name="produto">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Autor</label>
-                    <input class="form-control" name="autor" placeholder="Nome completo autor">
+                   <button type="button" id="btn-buscar" name="btn_buscar" class="btn btn-primary">Buscar</button>
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Editora</label>
-                    <input class="form-control" name="editora" placeholder="Editora">
+                    <label class="control-label">Descrição Produto:</label>
+                    <textarea class="form-control" name= "descricaoProduto" rows="4"></textarea>
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Numero Edição</label>
-                    <input class="form-control" name="numero-edicao" placeholder="Número edição">
+                    <label class="control-label">Valor Unitario:</label>
+                    <input class="form-control" name="valorUnitario">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Ano</label>
-                    <input class="form-control" name="ano" placeholder="Ano de publicação da edição">
+                    <label class="control-label">Quantidade:</label>
+                    <input class="form-control" name="quantidade">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">ISBN</label>
-                    <input class="form-control" name="isbn" placeholder="ISBN">
+                    <label class="control-label">Valor Desconto:</label>
+                    <input class="form-control" name="valorDesconto">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Descrição</label>
-                    <textarea class="form-control" name="descricao" placeholder="Breve descrição da obra"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Imagem/Capa Edição</label>
-                    <input class="form-control" name="file">
+                    <label class="control-label">Valor Total:</label>
+                    <input class="form-control" name="valorTotal">
                   </div>
                 </form>
               </div>
-              <div class="card-footer">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Cadastrar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+            </div>
+          </div>
+          
+          <div class="col-md-5">
+            <div class="card">
+              <h3 class="card-title">Resumo Venda</h3>
+              <div class="card-body">
+              <table class="table table-condensed">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Valor Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <c:forEach items="${produtos}" var="produto">
+                  <tr>
+                  	<td>${produto.getTitulo()}</td>
+                  	<td>1</td>
+                  	<td>${produto.getValor()}</td>
+                  	<td>${produto.getValor() * 3}</td>
+                  </tr>
+                  </c:forEach>       
+                </tbody>
+              </table>
               </div>
             </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card">
+              <div class="card-body">
+         		 <div class="form-group">
+          		 <label class="control-label">Total da venda</label>
+             	 <div class="input-group"><span class="input-group-addon">R$</span>
+                	<input class="form-control" type="text"><span class="input-group-btn">
+                	<button class="btn btn-primary" type="button">Finalizar</button></span>
+             	 </div>
+        		 </div> 
+         	 </div>
+          </div>
+         </div>
+		</div>
+	</div>
+	</div>
   </body>
 </html>
