@@ -61,18 +61,32 @@
       <aside class="main-sidebar hidden-print">
         <section class="sidebar">
           <div class="user-panel">
-            <div class="pull-left image"><img class="img-circle" src="file:///Users/priscillabittencourt/git/ProjetoFinal_LivrariaIFSC/WebContent/images/Logo.png" alt="User Image"></div>
+            <div class="pull-left image"><img class="img-circle" src="file:///Users/priscillabittencourt/git/ProjetoFinal_LivrariaIFSC/WebContent/images/Priscilla.png" alt="User Image"></div>
             <div class="pull-left info">
-              <p>Greenwich Village </p>
-              <p class="designation"></p>
+              <p>Priscilla Bitencourt </p>
+              <p class="designation">Escrava</p>
             </div>
           </div>
           <!-- Sidebar Menu-->
           <ul class="sidebar-menu">
             <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Venda</span><i class="fa fa-angle-right"></i></a>
+            <li class="treeview"><a href="#"><i class="fa fa-shopping-basket"></i><span>Venda</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="FrenteCaixa.jsp"><i class="fa fa-circle-o"></i> Frente Caixa</a></li>
+                <li><a href="/view/venda/FrenteCaixa.jsp"><i class="fa fa-circle-o"></i> Frente Caixa</a></li>
+              </ul>
+            </li>
+            <li class="treeview"><a href="#"><i class="fa fa-book"></i><span>Produtos</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="FrenteCaixa.jsp"><i class="fa fa-circle-o"></i> Listar Produtos</a></li>
+              </ul>
+            </li>
+            <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Cadastros</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="/view/cadastros/FormularioCadastroProduto.jsp"><i class="fa fa-circle-o"></i> Cadastro Produto</a></li>
+                <li><a href="form-components.html"><i class="fa fa-circle-o"></i> Form Components</a></li>
+                <li><a href="form-custom.html"><i class="fa fa-circle-o"></i> Custom Components</a></li>
+                <li><a href="form-samples.html"><i class="fa fa-circle-o"></i> Form Samples</a></li>
+                <li><a href="form-notifications.html"><i class="fa fa-circle-o"></i> Form Notifications</a></li>
               </ul>
             </li>
             <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
@@ -84,15 +98,7 @@
               </ul>
             </li>
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Cadastros</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="FormularioCadastroProduto.html"><i class="fa fa-circle-o"></i> Cadastro Produto</a></li>
-                <li><a href="form-components.html"><i class="fa fa-circle-o"></i> Form Components</a></li>
-                <li><a href="form-custom.html"><i class="fa fa-circle-o"></i> Custom Components</a></li>
-                <li><a href="form-samples.html"><i class="fa fa-circle-o"></i> Form Samples</a></li>
-                <li><a href="form-notifications.html"><i class="fa fa-circle-o"></i> Form Notifications</a></li>
-              </ul>
-            </li>
+           
             <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Tables</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="table-basic.html"><i class="fa fa-circle-o"></i> Basic Tables</a></li>

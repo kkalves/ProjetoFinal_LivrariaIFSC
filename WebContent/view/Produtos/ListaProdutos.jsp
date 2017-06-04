@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-  
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
-    <title>Greenwich Village </title>
+    <title>Greenwich Village</title>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
     <!--if lt IE 9
     script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
     script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     -->
-    <!-- Javascripts-->
+     <!-- Javascripts-->
     <script src="${pageContext.request.contextPath}/js/jquery-2.1.4.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/plugins/pace.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/main.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#sampleTable').DataTable();</script>
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
       <!-- Navbar-->
-      <header class="main-header hidden-print"><a class="logo" href="index.html">Greenwich Village </a>
+      <header class="main-header hidden-print"><a class="logo" href="index.html">Greenwich Village</a>
         <nav class="navbar navbar-static-top">
           <!-- Sidebar toggle button--><a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
           <!-- Navbar Right Menu-->
@@ -59,7 +61,7 @@
           <div class="user-panel">
             <div class="pull-left image"><img class="img-circle" src="file:///Users/priscillabittencourt/git/ProjetoFinal_LivrariaIFSC/WebContent/images/Priscilla.png" alt="User Image"></div>
             <div class="pull-left info">
-              <p>Priscilla Bitencourt  </p>
+              <p>Priscilla Bitencourt</p>
               <p class="designation">Escrava</p>
             </div>
           </div>
@@ -84,7 +86,7 @@
                 <li><a href="form-samples.html"><i class="fa fa-circle-o"></i> Form Samples</a></li>
                 <li><a href="form-notifications.html"><i class="fa fa-circle-o"></i> Form Notifications</a></li>
               </ul>
-            </li>
+            </li>          
             <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="bootstrap-components.html"><i class="fa fa-circle-o"></i> Bootstrap Elements</a></li>
@@ -94,7 +96,6 @@
               </ul>
             </li>
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
-
             <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Tables</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="table-basic.html"><i class="fa fa-circle-o"></i> Basic Tables</a></li>
@@ -130,62 +131,78 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-edit"></i>Cadastro Produto</h1>
-            <p>Produto</p>
-          </div>
-          <div>
-            <ul class="breadcrumb">
+            <h1>Lista de Produtos</h1>
+            <ul class="breadcrumb side">
               <li><i class="fa fa-home fa-lg"></i></li>
-              <li>Formulario</li>
-              <li><a href="#">Cadastro Produto</a></li>
+              <li>Produtos</li>
+              <li class="active"><a href="#">Listar Produtos</a></li>
             </ul>
           </div>
+          <div><a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a><a class="btn btn-info btn-flat" href="#"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="#"><i class="fa fa-lg fa-trash"></i></a></div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="card">
-              ${mensagem}
-              <h3 class="card-title">Cadastro</h3>
+         		 <div class="form-group">
+          		 <label class="control-label">Pesquisar Produto</label>
+             	 <div class="input-group"><span class="input-group-addon">Título</span>
+                	<input class="form-control" type="text"><span class="input-group-btn">
+                	<button class="btn btn-primary" type="button">Buscar</button></span>
+             	 </div>
+        		 </div> 
               <div class="card-body">
-                <form method="post" action="">
-                  <div class="form-group">
-                    <label class="control-label">Título</label>
-                    <input class="form-control" name="titulo" placeholder="Título da Obra">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Autor</label>
-                    <input class="form-control" name="autor" placeholder="Nome completo autor">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Editora</label>
-                    <input class="form-control" name="editora" placeholder="Editora">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Número Edição</label>
-                    <input class="form-control" name="numero-edicao" placeholder="Número Edição">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Ano</label>
-                    <input class="form-control" name="ano" placeholder="Ano de publicação da Edição">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">ISBN</label>
-                    <input class="form-control" name="isbn" placeholder="ISBN">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Descrição</label>
-                    <textarea class="form-control" name="descricao" placeholder="Breve descrição da obra"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Valor da Obra</label>
-                    <input class="form-control" name="valor" placeholder="Valor da Obra">
-                  </div>
-                  <div class="card-footer">
-                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">
-             	  </div>
-                </form>
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>TÃ­tulo</th>
+                      <th>Autor</th>
+                      <th>Editora</th>
+                      <th>NÃºmero EdiÃ§Ã£o</th>
+                      <th>ISBN</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tiger Nixon</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                      <td>61</td>
+                      <td>2011/04/25</td>
+                      <td>$320,800</td>
+                    </tr>
+                    <tr>
+                      <td>Garrett Winters</td>
+                      <td>Accountant</td>
+                      <td>Tokyo</td>
+                      <td>63</td>
+                      <td>2011/07/25</td>
+                      <td>$170,750</td>
+                    </tr>
+                    <tr>
+                      <td>Ashton Cox</td>
+                      <td>Junior Technical Author</td>
+                      <td>San Francisco</td>
+                      <td>66</td>
+                      <td>2009/01/12</td>
+                      <td>$86,000</td>
+                    </tr>
+                    <tr>
+                      <td>Cedric Kelly</td>
+                      <td>Senior Javascript Developer</td>
+                      <td>Edinburgh</td>
+                      <td>22</td>
+                      <td>2012/03/29</td>
+                      <td>$433,060</td>
+                    </tr>
+                    <tr>
+                  </tbody>
+                </table>
               </div>
-
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
