@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,6 +23,8 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">$('#sampleTable').DataTable();</script>
+    
+    <script src="${pageContext.request.contextPath}/js/ListaProdutos.js"></script>
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
@@ -145,9 +150,9 @@
             <div class="card">
          		 <div class="form-group">
           		 <label class="control-label">Pesquisar Produto</label>
-             	 <div class="input-group"><span class="input-group-addon">T�tulo</span>
-                	<input class="form-control" type="text"><span class="input-group-btn">
-                	<button class="btn btn-primary" type="button">Buscar</button></span>
+             	 <div class="input-group"><span class="input-group-addon">Título</span>
+                	<input class="form-control" type="text" id="titulo-produto"><span class="input-group-btn">
+                	<button class="btn btn-primary" type="button" id="btn-buscar">Buscar</button></span>
              	 </div>
         		 </div> 
               <div class="card-body">
@@ -157,45 +162,26 @@
                       <th>Título</th>
                       <th>Autor</th>
                       <th>Editora</th>
-                      <th>Número Edição</th>
+                      <th>Edição</th>
                       <th>ISBN</th>
                       <th>Valor</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
-                    </tr>
-                    <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
-                    </tr>
-                    <tr>
+                  <tbody id="tabela-produtos">
+                  <c:forEach items="${produtos}" var="produto">
+	                  <tr>
+	                  	<td>${produto.getTitulo()}</td>
+	                  	<td>${produto.getAutor()}</td>
+	                  	<td>${produto.getEditora()}</td>
+	                  	<td>${produto.getNumero()}</td>
+	                  	<td>${produto.getIsbn()}</td>
+	                  	<td>${produto.getValor() * 3}</td>
+	                  	<td><a href="">Editar</a></td>
+	                  	<td><a href="" class="delete-link" id='${produto.getIsbn()}' >Excluir</a></td>
+	                  </tr>
+                  </c:forEach>  
                   </tbody>
                 </table>
               </div>

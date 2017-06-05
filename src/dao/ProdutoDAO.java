@@ -29,15 +29,28 @@ public class ProdutoDAO {
 		produtos.remove(p1);
 	}
 	
-	public void deletarPorCodigo(int index){
-		produtos.remove(index);
+	public boolean deletarPorISBN(String titulo){
+		Produto produto = this.buscarUmPorISBN(titulo);
+		if(produto == null){
+			return false;
+		}
+		produtos.remove(produto);
+		return true;
 	}
 	public ArrayList<Produto> buscarTodos(){
 		return this.produtos;
 		
 	}
-
-	public Produto buscarPorTitulo(String titulo) {
+	public Produto buscarUmPorISBN(String isbn) {
+		for (Produto produto : this.produtos) {
+			if(produto.getIsbn().trim().equals(isbn.trim())){
+				return produto;
+			}
+		}
+		return null;
+		
+	}
+	public Produto buscarUmPorTitulo(String titulo) {
 		for (Produto produto : this.produtos) {
 			if(produto.getTitulo().trim().toLowerCase().equals(titulo.trim().toLowerCase())){
 				return produto;
@@ -45,5 +58,19 @@ public class ProdutoDAO {
 		}
 		return null;
 		
+	}
+	public ArrayList<Produto> buscarNPorTitulo(String titulo) {
+		ArrayList<Produto> ProdutosEncontrados = new ArrayList();
+		for (Produto produto : this.produtos) {
+			System.out.println(produto.getTitulo());
+			if(produto.getTitulo().trim().toLowerCase().equals(titulo.trim().toLowerCase())){
+				
+				ProdutosEncontrados.add(produto);
+			}
+		}
+		if(ProdutosEncontrados.isEmpty()){
+			ProdutosEncontrados = null;
+		}
+		return ProdutosEncontrados;
 	}
 }
