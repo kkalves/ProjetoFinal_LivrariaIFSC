@@ -29,7 +29,7 @@ public class CadastroProduto extends HttpServlet {
 		String titulo = req.getParameter("titulo");
 		String autor = req.getParameter("autor");
 		String editora = req.getParameter("editora");
-		String numero = req.getParameter("numero");
+		String numero = req.getParameter("numero-edicao");
 		String ano = req.getParameter("ano");
 		String isbn = req.getParameter("isbn");
 		String descricao = req.getParameter("descricao");
@@ -38,8 +38,6 @@ public class CadastroProduto extends HttpServlet {
 		Produto p1 = new Produto(titulo, autor, editora, numero, ano, isbn, descricao, valor);
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		produtoDAO.inserir(p1);
-		
-		Produto p2 = produtoDAO.buscar(0);
 		
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/FormularioCadastroProduto.jsp");
 		req.setAttribute("mensagem", "<div class='alert alert-success'>Produto cadastrado com sucesso</div>");
