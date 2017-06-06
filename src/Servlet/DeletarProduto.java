@@ -2,7 +2,6 @@ package Servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,18 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import dao.ProdutoDAO;
-import model.Produto;
 
-@WebServlet(urlPatterns="/buscaProduto")
-public class BuscaProduto extends HttpServlet{
+@WebServlet(urlPatterns="/deletarProduto")
+public class DeletarProduto extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String isbn = req.getParameter("isbn");
 		ProdutoDAO produto_dao = new ProdutoDAO();
-		Produto produto = produto_dao.buscarUmPorTitulo(req.getParameter("titulo"));	
-		if(produto == null){
-			req.setAttribute("mensagem", "<div class='alert alert-danger'>Produto não encontrado!</div>");
-		}
+		Boolean flagProdutoDeletado = produto_dao.deletarPorISBN(isbn);
 		Gson gson = new Gson();
-		resp.getWriter().write(gson.toJson(produto));
+		if(flagProdutoDeletado == true){
+			resp.getWriter().write(gson.toJson(produto_dao.buscarTodos()));
+		}else{
+			resp.getWriter().write(gson.toJson("Erro! Produto não deletado!"));
+		}		
 	}
 }
