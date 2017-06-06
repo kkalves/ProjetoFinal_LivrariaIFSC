@@ -22,6 +22,10 @@ public class ProdutoDAO {
 	ArrayList<Produto> produtos = new ArrayList<Produto>();
 	
 	public void inserir(Produto p1){
+		Document doc = this.convertProdutoEmDocumento(p1);
+		this.produtoCollection.insertOne(doc);
+	}
+	private Document convertProdutoEmDocumento(Produto p1){
 		Document doc = new Document()
 				.append("titulo", p1.getTitulo())
 				.append("autor", p1.getAutor())
@@ -31,13 +35,12 @@ public class ProdutoDAO {
 				.append("isbn", p1.getIsbn())
 				.append("descricao", p1.getDescricao())
 				.append("valor", p1.getValor());
-		this.produtoCollection.insertOne(doc);
+		return doc;
 	}
-	
-	public void deletar(Produto p1){
-		produtos.remove(p1);
+	public void editarUm(Produto p1){
+		Document doc = this.convertProdutoEmDocumento(p1);
+		this.produtoCollection.updateOne(Filters.eq("isbn",p1.getIsbn()), doc);
 	}
-	
 	public boolean deletarPorISBN(String isbn){
 		produtoCollection.deleteOne(Filters.eq("isbn", isbn));
 		return true;
@@ -55,12 +58,10 @@ public class ProdutoDAO {
 		
 	}
 	public Produto buscarUmPorISBN(String isbn) {
-		for (Produto produto : this.produtos) {
-			if(produto.getIsbn().trim().equals(isbn.trim())){
-				return produto;
-			}
-		}
-		return null;
+		Document produtoDocumento = produtoCollection.find(Filters.eq("isbn",isbn)).first();
+		Produto produto = gson.fromJson(produtoDocumento.toJson(), Produto.class);
+		
+		return produto;
 		
 	}
 	public Produto buscarUmPorTitulo(String titulo) {
