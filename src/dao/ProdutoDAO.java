@@ -1,5 +1,6 @@
 package dao;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import org.bson.Document;
@@ -37,6 +38,24 @@ public class ProdutoDAO {
 				.append("valor", p1.getValor());
 		return doc;
 	}
+	//TODO
+	private Produto convertDocumentoEmProduto(Document doc){
+		System.out.println(doc.get("valor"));
+		String valorString = String.valueOf(doc.get("valor"));
+		valorString = valorString.replace(",", ".");
+		
+		Produto p1 = new Produto(
+		(String)doc.get("titulo"),
+		(String)doc.get("autor"),
+		(String)doc.get("editora"),
+		(String)doc.get("numero"),
+		(String)doc.get("ano"),
+		(String)doc.get("isbn"),
+		(String)doc.get("descricao"),
+		valorString);
+		
+		return p1;
+	}
 	public void editarUm(Produto p1){
 		Document doc = this.convertProdutoEmDocumento(p1);
 		this.produtoCollection.updateOne(Filters.eq("isbn",p1.getIsbn()), doc);
@@ -49,7 +68,8 @@ public class ProdutoDAO {
 		MongoCursor<Document> cursor = produtoCollection.find().iterator();
 		try {
 		    while (cursor.hasNext()) {
-		        produtos.add(gson.fromJson(cursor.next().toJson(), Produto.class));
+		    	Produto p1 = this.convertDocumentoEmProduto(cursor.next());
+		        produtos.add(p1);
 		    }
 		} finally {
 		    cursor.close();

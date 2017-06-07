@@ -82,38 +82,6 @@
                 <li><a href="CadastroCliente.html"><i class="fa fa-circle-o"></i> Cadastro Cliente</a></li>
                 <li><a href="ClienteJuridico.html"><i class="fa fa-circle-o"></i> Cadastro Cliente Juridico</a></li>      
                 <li><a href="Vendedor.html"><i class="fa fa-circle-o"></i> Cadastro Vendedor</a></li>
-                <li><a href="form-custom.html"><i class="fa fa-circle-o"></i> Custom Components</a></li>
-                <li><a href="form-samples.html"><i class="fa fa-circle-o"></i> Form Samples</a></li>
-                <li><a href="form-notifications.html"><i class="fa fa-circle-o"></i> Form Notifications</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Tables</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="table-basic.html"><i class="fa fa-circle-o"></i> Basic Tables</a></li>
-                <li><a href="table-data-table.html"><i class="fa fa-circle-o"></i> Data Tables</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-file-text"></i><span>Pages</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="blank-page.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                <li><a href="page-login.html"><i class="fa fa-circle-o"></i> Login Page</a></li>
-                <li><a href="page-lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen Page</a></li>
-                <li><a href="page-user.html"><i class="fa fa-circle-o"></i> User Page</a></li>
-                <li><a href="page-invoice.html"><i class="fa fa-circle-o"></i> Invoice Page</a></li>
-                <li><a href="page-calendar.html"><i class="fa fa-circle-o"></i> Calendar Page</a></li>
-                <li><a href="page-mailbox.html"><i class="fa fa-circle-o"></i> Mailbox</a></li>
-                <li><a href="page-error.html"><i class="fa fa-circle-o"></i> Error Page</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Multilevel Menu</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="blank-page.html"><i class="fa fa-circle-o"></i> Level One</a></li>
-                <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i><span> Level One</span><i class="fa fa-angle-right"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="blank-page.html"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i><span> Level Two</span></a></li>
-                  </ul>
-                </li>
               </ul>
             </li>
           </ul>
@@ -122,14 +90,14 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-edit"></i>Cadastro Cliente</h1>
+            <h1><i class="fa fa-edit"></i>Cadastro Cliente Fisico</h1>
             <p></p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-home fa-lg"></i></li>
               <li>Formulario</li>
-              <li><a href="#">Cadastro Cliente</a></li>
+              <li><a href="#">Cadastro Cliente Fisico</a></li>
             </ul>
           </div>
         </div>
@@ -140,7 +108,7 @@
               <div class="card-body">
                 <form>
                   <div class="form-group">
-                    <label class="control-label">Nome Cliente completo</label>
+                    <label class="control-label">Nome Completo</label>
                     <input class="form-control" name="nome" placeholder="Digite o nome do cliente ">
                   </div>
                   <div class="form-group">
@@ -162,20 +130,9 @@
                     <input class="form-control" name="endereço" placeholder="Endereço do cliente">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Bairro</label>
-                    <input class="form-control" name="bairro" placeholder="Bairro do cliente">
-                  </div>
-                  <div class="form-group">
                     <label class="control-label">Telefone</label>
                     <input class="form-control" name="telefone" placeholder="Telefone do cliente">
                   </div>
-                   <div class="form-group">
-                    <label class="control-label">Cidade</label>
-                    <input class="form-control" name="cidade" placeholder="Cidade do cliente">
-                  </div>
-                   <div class="form-group">
-                    <label class="control-label">Estado</label>
-                    <input class="form-control" name="estado" placeholder="Estado do cliente">
                   </div>
                 </form>
               </div>

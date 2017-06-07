@@ -8,21 +8,29 @@ public class ClienteFisico {
 	private String cpf;
 	private String email;
 	private String sexo;
-	private Date dataNascimento;
 	private String telefone;
+	private String endereco;
 
-	public ClienteFisico(boolean tipo, String nome, String cpf, String email, String sexo, Date dataNascimento,
-			String telefone) {
+	public ClienteFisico(String nome, String cpf, String email, String sexo, String telefone, String endereco) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 		this.sexo = sexo;
-		this.dataNascimento = dataNascimento;
 		this.telefone = telefone;
+		this.endereco = endereco;
 
 	}
 
+	public String getEndereco() {
+		return endereco;
+	}
+
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -53,14 +61,6 @@ public class ClienteFisico {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
-	}
-
-	public Date getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
 	}
 
 	public String getTelefone() {
