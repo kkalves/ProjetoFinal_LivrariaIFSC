@@ -58,17 +58,17 @@
           <ul class="sidebar-menu">
             <li class="treeview"><a href="#"><i class="fa fa-shopping-basket"></i><span>Venda</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="/ProjetoFinal_Livraria/view/venda/FrenteCaixa.jsp"><i class="fa fa-circle-o"></i> Frente Caixa</a></li>
+                <li><a href="/ProjetoFinal_Livraria/FrenteCaixa"><i class="fa fa-circle-o"></i> Frente Caixa</a></li>
               </ul>
             </li>
             <li class="treeview"><a href="#"><i class="fa fa-book"></i><span>Produtos</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="/ProjetoFinal_Livraria/view/Produtos/ListaProdutos.jsp"><i class="fa fa-circle-o"></i> Listar Produtos</a></li>
+                <li><a href="/ProjetoFinal_Livraria/listaProdutos"><i class="fa fa-circle-o"></i> Listar Produtos</a></li>
               </ul>
             </li>
             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Cadastros</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="/ProjetoFinal_Livraria/view/cadastros/FormularioCadastroProduto.jsp"><i class="fa fa-circle-o"></i> Cadastro Produto</a></li>
+                <li><a href="/ProjetoFinal_Livraria/CadastroProduto"><i class="fa fa-circle-o"></i> Cadastro Produto</a></li>
               </ul>
             </li>
           </ul>
@@ -89,7 +89,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="card">
                ${mensagem}
               <h3 class="card-title">Dados Produto</h3>
@@ -134,7 +134,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="card">
               <h3 class="card-title">Resumo Venda</h3>
               <div class="card-body">
@@ -153,7 +153,7 @@
                   	<td>${produto.getTitulo()}</td>
                   	<td>1</td>
                   	<td>${produto.getValor()}</td>
-                  	<td>${produto.getValor() * 3}</td>
+                  	<td>${produto.getValor()}</td>
                   </tr>
                   </c:forEach>       
                 </tbody>
@@ -161,7 +161,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="card">
               <div class="card-body">
          		 <div class="form-group">
