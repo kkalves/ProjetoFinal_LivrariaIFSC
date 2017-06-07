@@ -18,7 +18,6 @@ public class CadastroProduto extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/FormularioCadastroProduto.jsp");
 		view.forward(req, resp);

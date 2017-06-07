@@ -3,26 +3,26 @@ package dao;
 import java.util.ArrayList;
 import model.ClienteFisico; 
 
-public class ClienteFisicoDAO {
+public class ClienteDAO {
     
-	private ArrayList<ClienteFisico> todos = new ArrayList<>();
+	private ArrayList<Cliente> todos = new ArrayList<>();
 	
 	
-	public void adicionar(ClienteFisico clientefisico){
-		todos.add(clientefisico);
+	public void adicionar(Cliente cliente){
+		todos.add(cliente);
 	}
 	public void remover (int indice){
 		todos.remove(indice);
 	}
-	public ArrayList<ClienteFisico> getTodos(){
+	public ArrayList<Cliente> getTodos(){
 		return todos;
 			}
 	public static void main (String[] args){
-		ClienteFisicoDAO dao = new ClienteFisicoDAO();
+		ClienteDAO dao = new ClienteDAO();
 		//dao.adicionar(new Cliente());
 		//dao.adicionar(cliente());
 		
-		for(ClienteFisico clientefisico : dao.getTodos()){
+		for(Cliente cliente : dao.getTodos()){
 			System.out.println(clientefisico);
 	}
 	}
