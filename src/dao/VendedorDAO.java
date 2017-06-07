@@ -20,15 +20,6 @@ public class VendedorDAO {
 			public ArrayList<Vendedor> getTodos(){
 				return todos;
 					}
-			public static void main (String[] args){
-				VendedorDAO dao = new VendedorDAO();
-				//dao.adicionar(new Cliente());
-				//dao.adicionar(cliente());
-				
-				for(Vendedor vendedor : dao.getTodos()){
-					System.out.println(vendedor);
-			}
-			}
 			}
 
 
