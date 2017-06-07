@@ -1,7 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
-import model.ClienteFisico; 
+import model.Cliente; 
 
 public class ClienteDAO {
     
@@ -23,7 +23,7 @@ public class ClienteDAO {
 		//dao.adicionar(cliente());
 		
 		for(Cliente cliente : dao.getTodos()){
-			System.out.println(clientefisico);
+			System.out.println(cliente);
 	}
 	}
 	}
