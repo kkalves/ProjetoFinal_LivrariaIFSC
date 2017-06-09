@@ -18,7 +18,7 @@ public class DeletarClienteFisico extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String cpf = req.getParameter("cpf");
 		ClienteFisicoDAO clienteFisicodao = new ClienteFisicoDAO();
-		Boolean flagClienteFisicoDeletado = clienteFisicodao.deletarPorCpf(cpf);
+		Boolean flagClienteFisicoDeletado = clienteFisicodao.deletarPorCPF(cpf);
 		Gson gson = new Gson();
 		if(flagClienteFisicoDeletado == true){
 			resp.getWriter().write(gson.toJson(clienteFisicodao.buscarTodos()));

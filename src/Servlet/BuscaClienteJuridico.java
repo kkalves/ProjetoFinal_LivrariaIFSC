@@ -21,7 +21,7 @@ public class BuscaClienteJuridico extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ClienteJuridicoDAO clienteJuridicoDao = new ClienteJuridicoDAO();
-		ClienteJuridico clienteJuridico = clienteJuridicoDao.buscarUmCpf(req.getParameter("cpf"));	
+		ClienteJuridico clienteJuridico = clienteJuridicoDao.buscarUmPorCNPJ(req.getParameter("cnpj"));	
 		if(clienteJuridico == null){
 			req.setAttribute("mensagem", "<div class='alert alert-danger'>Cliente nao encontrado!</div>");
 		}

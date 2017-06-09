@@ -35,6 +35,10 @@ public class VendedorDAO {
 				// TODO Auto-generated method stub
 				return null;
 			}
+			public void editar(Vendedor vendedor) {
+				// TODO Auto-generated method stub
+				
+			}
 			}
 
 

@@ -1,41 +1,45 @@
 package Servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class EditarClienteJuridico
- */
+import dao.ClienteFisicoDAO;
+import dao.ClienteJuridicoDAO;
+import model.ClienteFisico;
+import model.ClienteJuridico;
+
 @WebServlet("/EditarClienteJuridico")
 public class EditarClienteJuridico extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EditarClienteJuridico() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		ClienteJuridicoDAO clienteJuridicodao = new ClienteJuridicoDAO();
+		ClienteJuridico clienteJuridicoEditar = clienteJuridicodao.buscarUmPorCNPJ(req.getParameter("cnpj"));
+		resp.setCharacterEncoding("UTF-8");
+		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoClienteJuridico.jsp");
+		req.setAttribute("cliente", clienteJuridicoEditar );
+		System.out.println(clienteJuridicoEditar.getNome());
+		view.forward(req, resp);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String nome = req.getParameter("nome");
+        String cnpj = req.getParameter("cnpj");
+		String email = req.getParameter("email");
+		String sexo = req.getParameter("sexo");
+		String telefone = req.getParameter("telefone");
+		String endereco= req.getParameter("endereco");
+		
+		ClienteJuridicoDAO clienteJuridicodao = new ClienteJuridicoDAO();
+		clienteJuridicodao.editarUm(new ClienteJuridico(nome, cnpj, email, sexo, telefone));
+		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoClienteJuridico.jsp");
+		ClienteJuridico clienteJuridicoEditar = clienteJuridicodao.buscarUmPorCNPJ(cnpj);
+		req.setAttribute("", clienteJuridicoEditar );
+		view.forward(req, resp);
 	}
-
 }

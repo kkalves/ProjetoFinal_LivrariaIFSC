@@ -20,6 +20,8 @@ public class CadastroClienteJuridico extends HttpServlet {
 
 
 
+	private static final ClienteFisicoDAO CienteJuridicoDAO = null;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
@@ -37,9 +39,9 @@ public class CadastroClienteJuridico extends HttpServlet {
 		String endereco= req.getParameter("endereco");
 		
 		
-		ClienteJuridico cf1 = new ClienteJuridico(nome, cnpj, endereco, email, telefone );
-		ClienteJuridicoDAO clienteDAO = new ClienteJuridicoDAO();
-		clienteDAO.adicionar(cf1);
+		ClienteJuridico cj1 = new ClienteJuridico(nome, cnpj, endereco, email, telefone );
+		ClienteJuridicoDAO clienteJuridicoDAO = new ClienteJuridicoDAO();
+		ClienteJuridicoDAO.adicionar(cj1);
 		
 
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/ClienteJuridico.jsp");
