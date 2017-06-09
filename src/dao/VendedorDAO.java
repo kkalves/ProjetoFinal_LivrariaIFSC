@@ -20,6 +20,10 @@ public class VendedorDAO {
 			public ArrayList<Vendedor> getTodos(){
 				return todos;
 					}
+			public Vendedor buscarUmCpf(String parameter) {
+				// TODO Auto-generated method stub
+				return null;
+			}
 			}
 
 

@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class DeletarCliente
  */
 @WebServlet("/DeletarCliente")
-public class DeletarCliente extends HttpServlet {
+public class DeletarClienteJuridico extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public DeletarCliente() {
+    public DeletarClienteJuridico() {
         // TODO Auto-generated constructor stub
     }
 

@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Cliente;
+import model.ClienteJuridico;
 
-@WebServlet(urlPatterns = "/CadastroCliente")
-public class CadastroCliente extends HttpServlet {
+@WebServlet(urlPatterns = "/CadastroClienteJuridico")
+public class CadastroClienteJuridico extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

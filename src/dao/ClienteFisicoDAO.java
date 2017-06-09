@@ -17,4 +17,8 @@ public class ClienteFisicoDAO {
 	public ArrayList<ClienteFisico> getTodos(){
 		return todos;
 			}
+	public ClienteFisico buscarUmCpf(String parameter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}
