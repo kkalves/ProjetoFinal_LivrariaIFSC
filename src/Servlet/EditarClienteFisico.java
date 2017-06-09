@@ -1,41 +1,43 @@
 package Servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class EditarClienteFisico
- */
+import dao.ClienteFisicoDAO;
+import model.ClienteFisico;
+
 @WebServlet("/EditarClienteFisico")
 public class EditarClienteFisico extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EditarClienteFisico() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		ClienteFisicoDAO clienteFisicodao = new ClienteFisicoDAO();
+		ClienteFisico clienteFisicoEditar = clienteFisicodao.buscarUmCpf(req.getParameter("cpf"));
+		resp.setCharacterEncoding("UTF-8");
+		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoProduto.jsp");
+		req.setAttribute("cliente", clienteFisicoEditar );
+		System.out.println(clienteFisicoEditar.getNome());
+		view.forward(req, resp);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String nome = req.getParameter("nome");
+        String cpf = req.getParameter("cpf");
+		String email = req.getParameter("email");
+		String sexo = req.getParameter("sexo");
+		String telefone = req.getParameter("telefone");
+		String endereco= req.getParameter("endereco");
+		
+		ClienteFisicoDAO clienteFisicodao = new ClienteFisicoDAO();
+		clienteFisicodao.editar(new ClienteFisico(nome, cpf, email, sexo, telefone, endereco));
+		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoProduto.jsp");
+		ClienteFisico clienteFisicoEditar = clienteFisicodao.buscarUmCpf(cpf);
+		req.setAttribute("", clienteFisicoEditar );
+		view.forward(req, resp);
 	}
-
 }

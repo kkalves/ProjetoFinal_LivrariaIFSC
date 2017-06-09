@@ -2,6 +2,9 @@
 package dao;
 
 import java.util.ArrayList;
+
+import com.google.gson.JsonElement;
+
 import model.Vendedor; 
 
 public class VendedorDAO {
@@ -21,6 +24,14 @@ public class VendedorDAO {
 				return todos;
 					}
 			public Vendedor buscarUmCpf(String parameter) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			public JsonElement buscarTodos() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			public Boolean deletarPorCpf(String cpf) {
 				// TODO Auto-generated method stub
 				return null;
 			}

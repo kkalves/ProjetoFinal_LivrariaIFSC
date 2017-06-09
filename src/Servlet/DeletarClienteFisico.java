@@ -7,35 +7,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class DeletarClienteFisico
- */
+import com.google.gson.Gson;
+
+import dao.ClienteFisicoDAO;
+
+
 @WebServlet("/DeletarClienteFisico")
 public class DeletarClienteFisico extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeletarClienteFisico() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String cpf = req.getParameter("cpf");
+		ClienteFisicoDAO clienteFisicodao = new ClienteFisicoDAO();
+		Boolean flagClienteFisicoDeletado = clienteFisicodao.deletarPorCpf(cpf);
+		Gson gson = new Gson();
+		if(flagClienteFisicoDeletado == true){
+			resp.getWriter().write(gson.toJson(clienteFisicodao.buscarTodos()));
+		}else{
+			resp.getWriter().write(gson.toJson("Erro! Cliente nao deletado!"));
+		}		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

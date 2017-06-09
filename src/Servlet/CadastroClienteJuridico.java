@@ -10,41 +10,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ClienteFisicoDAO;
+import dao.ClienteJuridicoDAO;
+import model.ClienteFisico;
 import model.ClienteJuridico;
 
 @WebServlet(urlPatterns = "/CadastroClienteJuridico")
 public class CadastroClienteJuridico extends HttpServlet {
 
+
+
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws SaslException, IOException, ServletException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
-		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/CadastroCliente.jsp");
+		RequestDispatcher  view = req.getRequestDispatcher("/view/cadastros/ClienteFisico.jsp");
 		view.forward(req, resp);
 	}
 
 	@Override
-	 protected void doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-	 String nome = req.getParameter("nome");
-	 String cpf_cnpj = req.getParameter("cpf_cnpj");
-	 String email = req.getParameter("email");
-	 String sexo = req.getParameter("sexo");
-	 String dataNascimento = req.getParameter("dataNascimento");
-	 String telefone = req.getParameter("telefone");
-	 String bairro = req.getParameter("bairro");
-	 String cidade = req.getParameter("cidade");
-	 String estado= req.getParameter("estado");
-	
-	
-//	 Cliente p1 = new Cliente(nome, cpf_cnpj, email, sexo, dataNascimento, telefone);
-//	 ClienteFisicoDAO clientefisicoDAO = new ClienteFisicoDAO();
-//	 clienteFisicoDAO.inserir(p1);
-//	
-//	 Cliente p2 = ClienteFisicoDAO.buscar(0);
-	
-	 RequestDispatcher view =
-	 req.getRequestDispatcher("/view/cadastros/ClienteFisico.jsp");
-	 req.setAttribute("mensagem", "<div class='alert alert-success'>Cliente cadastrado com sucesso</div>");
-	 view.forward(req, resp);
-	 }
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String nome = req.getParameter("nome");
+        String cnpj = req.getParameter("cnpj");
+		String email = req.getParameter("email");
+		String telefone = req.getParameter("telefone");
+		String endereco= req.getParameter("endereco");
+		
+		
+		ClienteJuridico cf1 = new ClienteJuridico(nome, cnpj, endereco, email, telefone );
+		ClienteJuridicoDAO clienteDAO = new ClienteJuridicoDAO();
+		clienteDAO.adicionar(cf1);
+		
+
+		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/ClienteJuridico.jsp");
+		req.setAttribute("mensagem", "<div class='alert alert-success'>Cliente cadastrado com sucesso</div>");
+		view.forward(req, resp);
+	}
 }

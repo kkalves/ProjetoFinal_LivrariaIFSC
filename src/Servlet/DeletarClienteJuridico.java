@@ -7,34 +7,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
+import dao.ClienteJuridicoDAO;
+
 /**
  * Servlet implementation class DeletarCliente
  */
-@WebServlet("/DeletarCliente")
+@WebServlet("/DeletarClienteJuridico")
 public class DeletarClienteJuridico extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-    /**
-     * Default constructor. 
-     */
-    public DeletarClienteJuridico() {
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String cnpj = req.getParameter("cnpj");
+		ClienteJuridicoDAO clienteJuridicodao = new ClienteJuridicoDAO();
+		Boolean flagClienteJuridicoDeletado = clienteJuridicodao.deletarPorCpf(cnpj);
+		Gson gson = new Gson();
+		if(flagClienteJuridicoDeletado == true){
+			resp.getWriter().write(gson.toJson(clienteJuridicodao.buscarTodos()));
+		}else{
+			resp.getWriter().write(gson.toJson("Erro! Cliente nao deletado!"));
+		}		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }
