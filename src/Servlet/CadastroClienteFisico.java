@@ -39,8 +39,7 @@ public class CadastroClienteFisico extends HttpServlet {
 		ClienteFisicoDAO clienteDAO = new ClienteFisicoDAO();
 		clienteDAO.adicionar(cf1);
 		
-		//ClienteFisico cf2 = ClienteDAO.buscar(0);
-		//o metodo buscar não foi criado!!!
+
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/ClienteFisico.jsp");
 		req.setAttribute("mensagem", "<div class='alert alert-success'>Cliente cadastrado com sucesso</div>");
 		view.forward(req, resp);
