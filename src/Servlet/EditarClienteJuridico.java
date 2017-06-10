@@ -36,7 +36,7 @@ public class EditarClienteJuridico extends HttpServlet {
 		String endereco= req.getParameter("endereco");
 		
 		ClienteJuridicoDAO clienteJuridicodao = new ClienteJuridicoDAO();
-		clienteJuridicodao.editarUm(new ClienteJuridico(nome, cnpj, email, sexo, telefone));
+		clienteJuridicodao.editar(new ClienteJuridico(nome, cnpj, email, sexo, telefone));
 		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoClienteJuridico.jsp");
 		ClienteJuridico clienteJuridicoEditar = clienteJuridicodao.buscarUmPorCNPJ(cnpj);
 		req.setAttribute("", clienteJuridicoEditar );

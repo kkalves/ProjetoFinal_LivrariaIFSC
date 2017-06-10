@@ -51,6 +51,10 @@ public class ClienteJuridicoDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public Boolean deletarPorCNPJ(String cnpj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}
 
 

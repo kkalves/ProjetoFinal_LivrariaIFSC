@@ -24,7 +24,7 @@ public class ClienteFisicoDAO {
 	private ArrayList<ClienteFisico> todos = new ArrayList<>();
 	
 	
-	public void adicionar(ClienteFisico clientefisico){
+	public static void adicionar(ClienteFisico clientefisico){
 		
 		todos.add(clientefisico);
 	}
