@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.ClienteFisico;
 import model.ClienteJuridico;
 import dao.ClienteFisicoDAO;
+import dao.ProdutoDAO;
 
 @WebServlet(urlPatterns="/CadastroClienteFisico")
 public class CadastroClienteFisico extends HttpServlet {
@@ -35,7 +36,8 @@ public class CadastroClienteFisico extends HttpServlet {
 		
 		
 		ClienteFisico cf1 = new ClienteFisico(nome, cpf, email, sexo, telefone, endereco);
-		ClienteFisicoDAO.adicionar(cf1);
+		ClienteFisicoDAO clienteFisicoDAO = new ClienteFisicoDAO();
+		clienteFisicoDAO.adicionar(cf1);
 		
 
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/ClienteFisico.jsp");

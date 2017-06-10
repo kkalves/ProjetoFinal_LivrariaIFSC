@@ -1,19 +1,17 @@
 package model;
 
-import java.util.Date;
-
 public class Vendedor {
 
 	private String nome;
 	private String cpf;
 	private String email;
 	private String sexo;
-	private Date dataNascimento;
+	private String dataNascimento;
 	private String telefone;
 	private String login;
 	private String senha;
 
-	public Vendedor(String nome, String cpf, String email, String sexo, Date dataNascimento, String telefone,
+	public Vendedor(String nome, String cpf, String email, String sexo, String dataNascimento, String telefone,
 			String login, String senha) {
 		super();
 		this.nome = nome;
@@ -58,11 +56,11 @@ public class Vendedor {
 		this.sexo = sexo;
 	}
 
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

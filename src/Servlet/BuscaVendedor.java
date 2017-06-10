@@ -19,7 +19,7 @@ public class BuscaVendedor extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		VendedorDAO vendedorDao = new VendedorDAO();
-		Vendedor vendedor = vendedorDao.buscarUmCpf(req.getParameter("cpf"));	
+		Vendedor vendedor = vendedorDao.buscarUmPorCPF(req.getParameter("cpf"));	
 		if(vendedor == null){
 			req.setAttribute("mensagem", "<div class='alert alert-danger'>Vendedor nao encontrado!</div>");
 		}

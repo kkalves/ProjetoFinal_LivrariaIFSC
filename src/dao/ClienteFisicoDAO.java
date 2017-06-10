@@ -11,45 +11,46 @@ import com.mongodb.client.MongoCollection;
 import model.ClienteFisico;
 import model.ClienteJuridico;
 import model.Produto;
-import model.Vendedor; 
+import model.Vendedor;
 
 public class ClienteFisicoDAO {
 
 	private DatabaseProvider database_provider = new DatabaseProvider();
 	MongoCollection<org.bson.Document> clienteFisicoCollection = database_provider.getDatabase().getCollection("ClienteFisico");
 	private Gson gson = new Gson();
-	//ArrayList<ClienteFisico> clienteFisico = new ArrayList<ClienteFisico>();
-	
 
 	private ArrayList<ClienteFisico> todos = new ArrayList<>();
-	
-	
-	public static void adicionar(ClienteFisico clientefisico){
-		
+
+	public void adicionar(ClienteFisico clientefisico) {
+
 		todos.add(clientefisico);
 	}
-	public void remover (int indice){
+
+	public void remover(int indice) {
 		todos.remove(indice);
 	}
-	public ArrayList<ClienteFisico> getTodos(){
+
+	public ArrayList<ClienteFisico> getTodos() {
 		return todos;
-			}
+	}
+
 	public ClienteFisico buscarUmCpf(String parameter) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public JsonElement buscarTodos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public Boolean deletarPorCpf(String cpf) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public void editar(ClienteFisico clienteFisico) {
 		// TODO Auto-generated method stub
-		
-	}
-	}
 
-
+	}
+}
