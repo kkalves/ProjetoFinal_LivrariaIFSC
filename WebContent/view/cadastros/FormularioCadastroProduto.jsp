@@ -84,13 +84,14 @@
             </ul>
           </div>
         </div>
+       
         <div class="row">
           <div class="col-md-6">
             <div class="card">
               ${mensagem}
               <h3 class="card-title">Cadastro</h3>
               <div class="card-body">
-                <form method="post" action="">
+                <form>
                   <div class="form-group">
                     <label class="control-label">Título</label>
                     <input class="form-control" name="titulo" placeholder="Título da Obra">
@@ -128,7 +129,10 @@
              	  </div>
                 </form>
               </div>
-
-            </div>
+			</div>
+		</div>
+		</div> 
+      </div>
+     </div>  
   </body>
 </html>

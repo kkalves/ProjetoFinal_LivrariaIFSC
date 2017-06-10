@@ -87,7 +87,6 @@
             </ul>
           </div>
         </div>
-       </div>
         <div class="row">
           <div class="col-md-6">
             <div class="card">
@@ -133,8 +132,9 @@
                 </form>
               </div>
 			</div>
+			</div>
 		</div>
       </div>
-    </div>
+     </div>  
   </body>
 </html>
