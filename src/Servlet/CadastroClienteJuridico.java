@@ -40,7 +40,6 @@ public class CadastroClienteJuridico extends HttpServlet {
 		
 		
 		ClienteJuridico cj1 = new ClienteJuridico(nome, cnpj, endereco, email, telefone );
-		ClienteJuridicoDAO clienteJuridicoDAO = new ClienteJuridicoDAO();
 		ClienteJuridicoDAO.adicionar(cj1);
 		
 
