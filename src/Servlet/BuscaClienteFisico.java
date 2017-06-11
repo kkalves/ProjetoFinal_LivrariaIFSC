@@ -20,7 +20,7 @@ public class BuscaClienteFisico extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ClienteFisicoDAO clienteFisicoDao = new ClienteFisicoDAO();
-		ClienteFisico clienteFisico = clienteFisicoDao.buscarUmCpf(req.getParameter("cpf"));	
+		ClienteFisico clienteFisico = clienteFisicoDao.buscarUmPorCPF(req.getParameter("cpf"));	
 		if(clienteFisico == null){
 			req.setAttribute("mensagem", "<div class='alert alert-danger'>Cliente nao encontrado!</div>");
 		}

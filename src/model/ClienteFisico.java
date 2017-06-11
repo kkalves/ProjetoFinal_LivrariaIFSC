@@ -69,4 +69,10 @@ public class ClienteFisico {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
+	
+	public String get(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

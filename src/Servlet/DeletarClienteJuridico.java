@@ -20,7 +20,7 @@ public class DeletarClienteJuridico extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String cnpj = req.getParameter("cnpj");
 		ClienteJuridicoDAO clienteJuridicodao = new ClienteJuridicoDAO();
-		Boolean flagClienteJuridicoDeletado = clienteJuridicodao.deletarPorCNPJ(cnpj);
+		Boolean flagClienteJuridicoDeletado = clienteJuridicodao.deletarPorCnpj(cnpj);
 		Gson gson = new Gson();
 		if(flagClienteJuridicoDeletado == true){
 			resp.getWriter().write(gson.toJson(clienteJuridicodao.buscarTodos()));

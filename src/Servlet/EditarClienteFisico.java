@@ -17,7 +17,7 @@ public class EditarClienteFisico extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ClienteFisicoDAO clienteFisicodao = new ClienteFisicoDAO();
-		ClienteFisico clienteFisicoEditar = clienteFisicodao.buscarUmCpf(req.getParameter("cpf"));
+		ClienteFisico clienteFisicoEditar = clienteFisicodao.buscarUmPorCPF(req.getParameter("cpf"));
 		resp.setCharacterEncoding("UTF-8");
 		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoClienteFisico.jsp");
 		req.setAttribute("cliente", clienteFisicoEditar );
@@ -36,7 +36,7 @@ public class EditarClienteFisico extends HttpServlet {
 		ClienteFisicoDAO clienteFisicodao = new ClienteFisicoDAO();
 		clienteFisicodao.editar(new ClienteFisico(nome, cpf, email, sexo, telefone, endereco));
 		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoClienteFisico.jsp");
-		ClienteFisico clienteFisicoEditar = clienteFisicodao.buscarUmCpf(cpf);
+		ClienteFisico clienteFisicoEditar = clienteFisicodao.buscarUmPorCPF(cpf);
 		req.setAttribute("", clienteFisicoEditar );
 		view.forward(req, resp);
 	}

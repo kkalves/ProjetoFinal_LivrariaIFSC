@@ -40,7 +40,7 @@ public class CadastroClienteJuridico extends HttpServlet {
 		
 		
 		ClienteJuridico cj1 = new ClienteJuridico(nome, cnpj, endereco, email, telefone );
-		ClienteJuridicoDAO.adicionar(cj1);
+		//ClienteJuridicoDAO.adicionar(cj1);
 		
 
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/ClienteJuridico.jsp");
