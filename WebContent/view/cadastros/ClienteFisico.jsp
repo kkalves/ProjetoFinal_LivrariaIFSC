@@ -44,7 +44,7 @@
       <aside class="main-sidebar hidden-print">
         <section class="sidebar">
           <div class="user-panel">
-            <div class="pull-left image"><img class="img-circle" src="file:///Users/priscillabittencourt/git/ProjetoFinal_LivrariaIFSC/WebContent/images/Priscilla.png" alt="User Image"></div>
+          // <div class="pull-left image"><img class="img-circle" src="file:///Users/priscillabittencourt/git/ProjetoFinal_LivrariaIFSC/WebContent/images/Priscilla.png" alt="User Image"></div>
             <div class="pull-left info">
               <p> </p>
               <p class="designation"></p>
@@ -65,7 +65,7 @@
             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Cadastros</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="/ProjetoFinal_Livraria/CadastroProduto"><i class="fa fa-circle-o"></i> Cadastro Produto</a></li>
-               <li><a href="/ProjetoFinal_Livraria/CadastroClienteFisico"><i class="fa fa-circle-o"></i> Cadastro Cliente Fisico</a></li>
+                <li><a href="/ProjetoFinal_Livraria/CadastroClienteFisico"><i class="fa fa-circle-o"></i> Cadastro Cliente Fisico</a></li>
                 <li><a href="/ProjetoFinal_Livraria/CadastroClienteJuridico"><i class="fa fa-circle-o"></i> Cadastro Cliente Juridico</a></li>
                 <li><a href="/ProjetoFinal_Livraria/CadastroVendedor"><i class="fa fa-circle-o"></i> Cadastro Vendedor</a></li>
      
@@ -124,7 +124,8 @@
                 </form>
               </div>
               <div class="card-footer">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Cadastrar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+               <div class="card-footer">
+                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">
               </div>
             </div>
  
