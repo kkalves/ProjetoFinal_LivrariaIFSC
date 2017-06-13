@@ -40,7 +40,6 @@ public class ProdutoDAO {
 	}
 	//TODO
 	private Produto convertDocumentoEmProduto(Document doc){
-		System.out.println(doc.get("valor"));
 		String valorString = String.valueOf(doc.get("valor"));
 		valorString = valorString.replace(",", ".");
 		
@@ -58,7 +57,7 @@ public class ProdutoDAO {
 	}
 	public void editarUm(Produto p1){
 		Document doc = this.convertProdutoEmDocumento(p1);
-		this.produtoCollection.updateOne(Filters.eq("isbn",p1.getIsbn()), doc);
+		this.produtoCollection.replaceOne(Filters.eq("isbn",p1.getIsbn()), doc);
 	}
 	public boolean deletarPorISBN(String isbn){
 		produtoCollection.deleteOne(Filters.eq("isbn", isbn));

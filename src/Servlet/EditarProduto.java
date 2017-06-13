@@ -19,7 +19,7 @@ public class EditarProduto extends HttpServlet{
 		ProdutoDAO produto_dao = new ProdutoDAO();
 		Produto produtoAEditar = produto_dao.buscarUmPorISBN(req.getParameter("isbn"));
 		resp.setCharacterEncoding("UTF-8");
-		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoProduto.jsp");
+		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/FormularioEdicaoProduto.jsp");
 		req.setAttribute("produto", produtoAEditar );
 		System.out.println(produtoAEditar.getDescricao());
 		view.forward(req, resp);
@@ -36,8 +36,17 @@ public class EditarProduto extends HttpServlet{
 		String valor = req.getParameter("valor");
 		
 		ProdutoDAO produto_dao = new ProdutoDAO();
-		produto_dao.editarUm(new Produto(titulo, autor, editora, numero, ano, isbn, descricao, valor));
-		RequestDispatcher view = req.getRequestDispatcher("/ProjetoFinal_Livraria/view/cadastros/FormularioEdicaoProduto.jsp");
+		Produto produto = new Produto(titulo, autor, editora, numero, ano, isbn, descricao, valor);
+		System.out.println(produto.getTitulo());
+		System.out.println(produto.getAutor());
+		System.out.println(produto.getEditora());
+		System.out.println(produto.getNumero());
+		System.out.println(produto.getAno());
+		System.out.println(produto.getIsbn());
+		System.out.println(produto.getDescricao());
+		System.out.println(produto.getValor());
+		produto_dao.editarUm(produto);
+		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/FormularioEdicaoProduto.jsp");
 		Produto produtoAEditar = produto_dao.buscarUmPorISBN(isbn);
 		req.setAttribute("produto", produtoAEditar );
 		view.forward(req, resp);
