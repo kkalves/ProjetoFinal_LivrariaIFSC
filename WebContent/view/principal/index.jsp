@@ -70,10 +70,11 @@
 									class="fa fa-circle-o"></i><span> Cadastro Cliente</span><i
 									class="fa fa-angle-right"></i></a>
 								<ul class="treeview-menu">
-									<li><a href="blank-page.html"><i
-											class="fa fa-circle-o"></i> Cliente Físico</a></li>
-									<li><a href="#"><i class="fa fa-circle-o"></i> Cliente
-											Juridico</a></li>
+								<li><a href="blank-page.html"><i>
+                 <li><a href="/ProjetoFinal_Livraria/CadastroClienteFisico"><i class="fa fa-circle-o"></i> Cadastro Cliente Fisico</a></li>
+                <li><a href="/ProjetoFinal_Livraria/CadastroClienteJuridico"><i class="fa fa-circle-o"></i> Cadastro Cliente Juridico</a></li>
+               
+     
 								</ul></li>
 						</ul></li>
 					<!-- 					<li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li> -->
