@@ -126,7 +126,6 @@
 	                  	<td>${clienteFisico.getNome()}</td>
 	                  	<td>${clienteFisico.getEmail()}</td>
 	                  	<td>${clienteFisico.getSexo()}</td>
-	                  	<td>${clienteFisico.getCpf()}</td>
 	                  	<td>${clienteFisico.gettelefone()}</td>
 	                  	<td>${clienteFisico.getValor()}</td>
 	                  	<td><a href='/ProjetoFinal_Livraria/editarClienteFisico?cpf=${clienteFisico.getCpf()}'>Editar</a></td>

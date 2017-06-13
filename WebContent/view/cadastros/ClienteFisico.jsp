@@ -44,9 +44,8 @@
       <aside class="main-sidebar hidden-print">
         <section class="sidebar">
           <div class="user-panel">
-          // <div class="pull-left image"><img class="img-circle" src="file:///Users/priscillabittencourt/git/ProjetoFinal_LivrariaIFSC/WebContent/images/Priscilla.png" alt="User Image"></div>
             <div class="pull-left info">
-              <p> </p>
+              <p>  </p>
               <p class="designation"></p>
             </div>
           </div>
@@ -123,9 +122,10 @@
                   </div>
                 </form>
               </div>
-              <div class="card-footer">
-               <div class="card-footer">
-                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">
+                <div class="card-footer">
+                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar" onClick="window.location.href='CadastroClienteFisico'">
+                   
+                   
               </div>
             </div>
  
