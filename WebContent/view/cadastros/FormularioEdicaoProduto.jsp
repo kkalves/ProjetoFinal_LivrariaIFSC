@@ -127,7 +127,7 @@
                     <input class="form-control" name="valor" placeholder="Valor da Obra" value='${produto.valor}'	>
                   </div>
                   <div class="card-footer">
-                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">
+                  	<input class="btn btn-primary icon-btn" type="submit" value="Editar">
              	  </div>
                 </form>
               </div>
