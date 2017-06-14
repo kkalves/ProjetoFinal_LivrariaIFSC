@@ -9,40 +9,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.ClienteFisico;
-import model.ClienteJuridico;
 import dao.ClienteFisicoDAO;
-import dao.ProdutoDAO;
 
-@WebServlet(urlPatterns="/CadastroClienteFisico")
+@WebServlet(urlPatterns = "/CadastroClienteFisico")
 public class CadastroClienteFisico extends HttpServlet {
-
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
-		RequestDispatcher  view = req.getRequestDispatcher("/view/cadastros/ClienteFisico.jsp");
+		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/ClienteFisico.jsp");
 		view.forward(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String nome = req.getParameter("nome");
-        String cpf = req.getParameter("cpf");
+		String cpf = req.getParameter("cpf");
 		String email = req.getParameter("email");
 		String sexo = req.getParameter("sexo");
 		String telefone = req.getParameter("telefone");
-		String endereco= req.getParameter("endereco");
-		
-		
+		String endereco = req.getParameter("endereco");
+
 		ClienteFisico cf1 = new ClienteFisico(nome, cpf, email, sexo, telefone, endereco);
 		ClienteFisicoDAO clienteFisicoDAO = new ClienteFisicoDAO();
 		clienteFisicoDAO.adicionar(cf1);
-		
 
 		RequestDispatcher view = req.getRequestDispatcher("/view/cadastros/ClienteFisico.jsp");
 		req.setAttribute("mensagem", "<div class='alert alert-success'>Cliente cadastrado com sucesso</div>");
 		view.forward(req, resp);
 	}
 }
-
