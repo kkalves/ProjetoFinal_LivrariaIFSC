@@ -58,7 +58,7 @@
       <aside class="main-sidebar hidden-print">
         <section class="sidebar">
           <div class="user-panel">
-            <div class="pull-left image"><img class="img-circle" src="file:///Users/priscillabittencourt/git/ProjetoFinal_LivrariaIFSC/WebContent/images/Logo.png" alt="User Image"></div>
+            <div class="pull-left image"><img class="img-circle" src="" alt="User Image"></div>
             <div class="pull-left info">
               <p>Greenwich Village </p>
               <p class="designation"></p>
