@@ -22,7 +22,7 @@
 	<div class="wrapper">
 		<!-- Navbar-->
 		<header class="main-header hidden-print">
-			<a class="logo" href="index.html">Greenwich Village </a>
+			<a class="logo" href="index.jsp">Greenwich Village </a>
 			<nav class="navbar navbar-static-top">
 				<!-- Sidebar toggle button-->
 				<a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
@@ -34,10 +34,10 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
 							<ul class="dropdown-menu settings-menu">
-								<li><a href="page-user.html"><i
-										class="fa fa-user fa-lg"></i> Usuário</a></li>
-								<li><a href="page-login.html"><i
-										class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+								<li><a href="/ProjetoFinal_Livraria/listaVendedores"><i class="fa fa-user fa-lg"></i>
+										Usuário</a></li>
+								<li><a href="login.jsp"><i class="fa fa-sign-out fa-lg"></i>
+										Logout</a></li>
 							</ul></li>
 					</ul>
 				</div>
@@ -46,7 +46,6 @@
 		<!-- Side-Nav-->
 		<aside class="main-sidebar hidden-print">
 			<section class="sidebar">
-				<div class="user-panel"></div>
 				<!-- Sidebar Menu-->
 				<ul class="sidebar-menu">
 					<li class="active"><a href="index.jsp"><i
@@ -58,17 +57,25 @@
 							<li><a href="/ProjetoFinal_Livraria/FrenteCaixa"><i
 									class="fa fa-circle-o"></i> Frente Caixa</a></li>
 						</ul></li>
-					<li class="treeview"><a href="#"><i class="fa fa-book"></i><span>Produtos</span><i
+					<li class="treeview"><a href="#"><i class="fa fa-book"></i><span>Consultas</span><i
 							class="fa fa-angle-right"></i></a>
 						<ul class="treeview-menu">
 							<li><a href="/ProjetoFinal_Livraria/listaProdutos"><i
 									class="fa fa-circle-o"></i> Listar Produtos</a></li>
+							<li><a href="/ProjetoFinal_Livraria/listaFisico"><i
+									class="fa fa-circle-o"></i> Listar Fisico</a></li>
+							<li><a href="/ProjetoFinal_Livraria/listaJuridico"><i
+									class="fa fa-circle-o"></i> Listar Juridico</a></li>
+							<li><a href="/ProjetoFinal_Livraria/listaVendedores"><i
+									class="fa fa-circle-o"></i> Listar Vendedores</a></li>
 						</ul></li>
 					<li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Cadastros</span><i
 							class="fa fa-angle-right"></i></a>
 						<ul class="treeview-menu">
 							<li><a href="/ProjetoFinal_Livraria/CadastroProduto"><i
 									class="fa fa-circle-o"></i> Cadastro Produto</a></li>
+							<li><a href="/ProjetoFinal_Livraria/CadastroVendedor"><i
+									class="fa fa-circle-o"></i> Cadastro Vendedor</a></li>
 							<li class="treeview"><a href="#"><i
 									class="fa fa-circle-o"></i><span> Cadastro Cliente</span><i
 									class="fa fa-angle-right"></i></a>
@@ -87,68 +94,51 @@
 			<div class="page-title">
 				<div>
 					<h1>
-						<i class="fa fa-home"></i> Dashboard
+						<i class="fa fa-home"></i> Página Inicial
 					</h1>
-					<p>A free and modular admin template</p>
 				</div>
-				<div>
-					<ul class="breadcrumb">
-						<li><i class="fa fa-home fa-lg"></i></li>
-						<li><a href="#">Dashboard</a></li>
-					</ul>
+			</div>
+			<div class="col-md">
+				<div class="card">
+					<div class="row">
+						<h1 align="center" class="card-title">
+							Greenwich Village
+							<p>
+								<small>Cresça mais. Leia mais. Venda mais.</small>
+							</p>
+						</h1>
+					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="card">
-						<h3 class="card-title">Getting Started</h3>
-						<p>Vali is a free and responsive dashboard theme built with
-							Bootstrap, Pug.js (templating) and SASS. It's fully customizable
-							and modular. You don't need to add the code, you will not use.</p>
-						<p>The issue with the most admin themes out there is that if
-							you will see their source code there are a hell lot of external
-							CSS and javascript files in there. And if you try to remove a CSS
-							or Javascript file some things stops working.</p>
-						<p>
-							That's why I made Vali. Which is a light weight yet expendable
-							and good looking theme. The theme has all the features required
-							in a dashboard theme but this features are built like plug and
-							play module. Take a look at the <a
-								href="http://pratikborsadiya.in/blog/vali-admin" target="_blank">documentation</a>
-							about customizing the theme.
-						</p>
-						<p class="mt-40 mb-20">
-							<a class="btn btn-primary icon-btn mr-10"
-								href="http://pratikborsadiya.in/blog/vali-admin" target="_blank"><i
-								class="fa fa-file"></i>Docs</a><a
-								class="btn btn-info icon-btn mr-10"
-								href="https://github.com/pratikborsadiya/vali-admin"
-								target="_blank"><i class="fa fa-github"></i>GitHub</a><a
-								class="btn btn-success icon-btn"
-								href="https://github.com/pratikborsadiya/vali-admin/archive/master.zip"
-								target="_blank"><i class="fa fa-download"></i>Download</a>
-						</p>
+						<h3 class="card-title">
+							<i class="fa fa-industry"></i> Missão
+						</h3>
+						<p>Trabalhamos com o objetivo de servir nossos clientes com
+							confiabilidade, inovação e liderança na venda de nossos produtos
+							e serviços.</p>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="card">
-						<h3 class="card-title">Compatibility with frameworks</h3>
-						<p>This theme is not built for a specific framework or
-							technology like Angular or React etc. But due to it's modular
-							nature it's very easy to incorporate it into any front-end or
-							back-end framework like Angular, React or Laravel.</p>
-						<p>
-							Go to <a href="http://pratikborsadiya.in/blog/vali-admin"
-								target="_blank">documentation</a> for more details about
-							integrating this theme with various frameworks.
-						</p>
-						<p>
-							The source code is available on GitHub. If anything is missing or
-							weird please report it as an issue on <a
-								href="https://github.com/pratikborsadiya/vali-admin"
-								target="_blank">GitHub</a>. If you want to contribute to this
-							theme pull requests are always welcome.
-						</p>
+						<h3 class="card-title">
+							<i class="fa fa-eye"></i> Visão
+						</h3>
+						<p>Ter relações verdadeiras que permitirão envolver todos os
+							colaboradores em um projeto comum, respeitando à individualidade
+							de cada um.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<h3 class="card-title">
+							<i class="fa fa-heart"></i> Valores
+						</h3>
+						<p>Trabalhamos em um ambiente que promove a inclusão e acolhe
+							as mudanças, novas idéias, respeito pelo indivíduo e igualdade de
+							oportunidade de sucesso para todos.</p>
 					</div>
 				</div>
 			</div>
