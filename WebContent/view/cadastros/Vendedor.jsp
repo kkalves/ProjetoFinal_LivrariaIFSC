@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -149,8 +150,7 @@
                 </form>
               </div>
                 <div class="card-footer">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Cadastrar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
-              </div>
+<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">              </div>
                    </div>
 </body>
 </html>

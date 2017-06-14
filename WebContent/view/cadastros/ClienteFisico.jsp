@@ -44,9 +44,8 @@
       <aside class="main-sidebar hidden-print">
         <section class="sidebar">
           <div class="user-panel">
-          // <div class="pull-left image"><img class="img-circle" src="" alt="User Image"></div>
             <div class="pull-left info">
-              <p> </p>
+              <p>  </p>
               <p class="designation"></p>
             </div>
           </div>
@@ -60,6 +59,9 @@
             <li class="treeview"><a href="#"><i class="fa fa-book"></i><span>Produtos</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="/ProjetoFinal_Livraria/listaProdutos"><i class="fa fa-circle-o"></i> Listar Produtos</a></li>
+                <li><a href="/ProjetoFinal_Livraria/listaFisico"><i class="fa fa-circle-o"></i> Listar Fisico</a></li>
+                <li><a href="/ProjetoFinal_Livraria/listaJuridico"><i class="fa fa-circle-o"></i> Listar Juridico</a></li>
+                <li><a href="/ProjetoFinal_Livraria/listaVendedor"><i class="fa fa-circle-o"></i> Listar Vendedor</a></li>
               </ul>
             </li>
             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Cadastros</span><i class="fa fa-angle-right"></i></a>
@@ -123,9 +125,10 @@
                   </div>
                 </form>
               </div>
-              <div class="card-footer">
-               <div class="card-footer">
-                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar">
+                <div class="card-footer">
+                  	<input class="btn btn-primary icon-btn" type="submit" value="Cadastrar" onClick="window.location.href='CadastroClienteFisico'">
+                   
+                   
               </div>
             </div>
  
